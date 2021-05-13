@@ -1,11 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
+import { Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+
 import 'styles/global.scss'
+
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router history={history} >
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 )
