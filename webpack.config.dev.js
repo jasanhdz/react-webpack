@@ -12,6 +12,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.jsx']
   },
   mode: 'development',
+  
   module: {
     rules: [
       {
@@ -39,13 +40,24 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
-      // filename: '[name].html'
+      filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css'
