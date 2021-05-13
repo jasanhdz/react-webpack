@@ -1,7 +1,12 @@
 {
   "presets": [
     "@babel/present-env",
-    "@babel/present-react",
+    [
+      "@babel/present-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
     "@babel/preset-typescript"
   ],
   "plugins": [
