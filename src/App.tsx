@@ -4,7 +4,7 @@ import OtherPage from 'pages/other-page'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <div>
         <Switch>
           <Route exact path="/" component={HomePage} />
