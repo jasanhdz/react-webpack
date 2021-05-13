@@ -1,11 +1,17 @@
-import Card from 'components/card'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import HomePage from 'pages/home-page'
+import OtherPage from 'pages/other-page'
 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-      <Card />
-    </>
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/chat" component={OtherPage} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   )
 }
 

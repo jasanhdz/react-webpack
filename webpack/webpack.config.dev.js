@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const aliases = require('../aliases')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -9,13 +10,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
-    alias: {
-      'components': path.resolve(__dirname, './src/components/'),
-      'hooks': path.resolve(__dirname, './src/hooks/'),
-      'pages': path.resolve(__dirname, './src/pages/'),
-      'styles': path.resolve(__dirname, './src/styles/'),
-    }
+    alias: aliases,
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
   },
   mode: 'development',
   module: {

@@ -4,22 +4,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const aliases = require('../aliases')
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
     publicPath: './'
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
-    alias: {
-      'components': path.resolve(__dirname, './src/components/'),
-      'hooks': path.resolve(__dirname, './src/hooks/'),
-      'pages': path.resolve(__dirname, './src/pages/'),
-      'styles': path.resolve(__dirname, './src/styles/'),
-    }
+    alias: aliases,
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
   },
   mode: 'production',
   module: {
@@ -66,7 +62,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public', 'index.html'),
+      template: path.join(__dirname, '../public', 'index.html'),
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({

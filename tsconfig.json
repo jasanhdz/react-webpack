@@ -25,9 +25,14 @@
     "baseUrl": "./src/",
     "paths": {
       "components": ["./components/*"],
-      "styles": ["./styles/*"],
-      "pages": ["./pages/*"],
+      "config": ["./config/index.ts"],
       "hooks": ["./hooks/*"],
+      "models": ["./models/*"],
+      "pages": ["./pages/*"],
+      "reducers/*": ["./redux/reducers/*"],
+      "store": ["./redux/store/"],
+      "actions/*": ["./redux/actions/*"],
+      "styles": ["./styles/*"],
     }
   },
   "include": ["src/**/*"],
