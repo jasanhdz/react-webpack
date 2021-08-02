@@ -32,7 +32,7 @@
       "reducers/*": ["./redux/reducers/*"],
       "store": ["./redux/store/"],
       "actions/*": ["./redux/actions/*"],
-      "styles": ["./styles/*"],
+      "theme": ["./theme/*"],
     }
   },
   "include": ["src/**/*"],

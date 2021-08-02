@@ -9,5 +9,5 @@ module.exports = {
   reducers: path.resolve(__dirname, './src/redux/reducers/'),
   store: path.resolve(__dirname, './src/redux/store/'),
   actions: path.resolve(__dirname, './src/redux/actions/'),
-  styles: path.resolve(__dirname, './src/styles/'),
+  theme: path.resolve(__dirname, './src/theme/'),
 }
